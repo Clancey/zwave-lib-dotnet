@@ -33,6 +33,7 @@ using SerialPortLib;
 
 using ZWaveLib.Values;
 using ZWaveLib.CommandClasses;
+using System.Collections.ObjectModel;
 
 namespace ZWaveLib
 {
@@ -65,7 +66,7 @@ namespace ZWaveLib
 
         private ControllerStatus controllerStatus = ControllerStatus.Disconnected;
 
-        private List<ZWaveNode> nodeList = new List<ZWaveNode>();
+		private BulkUpdateObservableCollection<ZWaveNode> nodeList = new BulkUpdateObservableCollection<ZWaveNode>();
 
         private byte[] serialBuffer = null;
         private byte[] lastMessage = null;
@@ -567,14 +568,14 @@ namespace ZWaveLib
         /// <param name="nodeId">Node identifier.</param>
         public ZWaveNode GetNode(byte nodeId)
         {
-            return nodeList.Find(zn => zn.Id == nodeId);
+            return nodeList.FirstOrDefault(zn => zn.Id == nodeId);
         }
 
         /// <summary>
         /// Gets the nodes.
         /// </summary>
         /// <value>The nodes.</value>
-        public List<ZWaveNode> Nodes
+		public ObservableCollection<ZWaveNode> Nodes
         {
             get { return nodeList; }
         }
@@ -1438,7 +1439,8 @@ namespace ZWaveLib
             {
                 node.NodeUpdated -= ZWave_NodeUpdated;
             }
-            nodeList.RemoveAll(zn => zn.Id == nodeId);
+
+			nodeList.Remove(node);
             UpdateOperationProgress(nodeId, NodeQueryStatus.NodeRemoved);
         }
 
@@ -1451,7 +1453,7 @@ namespace ZWaveLib
                 {
                     var serializer = new XmlSerializer(nodeList.GetType());
                     var reader = new StreamReader(configPath);
-                    nodeList = (List<ZWaveNode>)serializer.Deserialize(reader);
+					nodeList.Replace((List<ZWaveNode>)serializer.Deserialize(reader));
                     reader.Close();
                     foreach (var node in nodeList)
                     {
