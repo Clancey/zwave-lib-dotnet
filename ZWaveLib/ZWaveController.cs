@@ -66,7 +66,7 @@ namespace ZWaveLib
 
         private ControllerStatus controllerStatus = ControllerStatus.Disconnected;
 
-		private BulkUpdateObservableCollection<ZWaveNode> nodeList = new BulkUpdateObservableCollection<ZWaveNode>();
+		private readonly BulkUpdateObservableCollection<ZWaveNode> nodeList = new BulkUpdateObservableCollection<ZWaveNode>();
 
         private byte[] serialBuffer = null;
         private byte[] lastMessage = null;
