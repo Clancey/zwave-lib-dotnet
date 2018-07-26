@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZWaveLib", "ZWaveLib\ZWaveL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.ZWave", "Test.ZWave\Test.ZWave.csproj", "{528CDF2E-4FFB-4154-9115-36590F380342}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPortLib", "..\serialport-lib-dotnet\SerialPortLib\SerialPortLib.csproj", "{FD8C9EEB-322A-4E83-B976-83722B3CE8F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,15 +21,18 @@ Global
 		{528CDF2E-4FFB-4154-9115-36590F380342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{528CDF2E-4FFB-4154-9115-36590F380342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{528CDF2E-4FFB-4154-9115-36590F380342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD8C9EEB-322A-4E83-B976-83722B3CE8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8C9EEB-322A-4E83-B976-83722B3CE8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8C9EEB-322A-4E83-B976-83722B3CE8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8C9EEB-322A-4E83-B976-83722B3CE8F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.FileWidth = 240
 		$1.EolMarker = Unix
-		$1.inheritsSet = VisualStudio
-		$1.inheritsScope = text/plain
 		$1.scope = text/x-csharp
+		$1.TabsToSpaces = True
 		$0.CSharpFormattingPolicy = $2
 		$2.AnonymousMethodBraceStyle = NextLine
 		$2.PropertyBraceStyle = NextLine
@@ -62,24 +67,34 @@ Global
 		$2.IndexerArgumentWrapping = DoNotWrap
 		$2.NewLineAferIndexerOpenBracket = SameLine
 		$2.IndexerClosingBracketOnNewLine = SameLine
-		$2.inheritsSet = Mono
-		$2.inheritsScope = text/x-csharp
 		$2.scope = text/x-csharp
+		$2.IndentSwitchSection = False
+		$2.NewLinesForBracesInProperties = False
+		$2.NewLinesForBracesInAccessors = False
+		$2.NewLinesForBracesInAnonymousMethods = False
+		$2.NewLinesForBracesInControlBlocks = False
+		$2.NewLinesForBracesInAnonymousTypes = False
+		$2.NewLinesForBracesInObjectCollectionArrayInitializers = False
+		$2.NewLinesForBracesInLambdaExpressionBody = False
+		$2.NewLineForElse = False
+		$2.NewLineForCatch = False
+		$2.NewLineForFinally = False
+		$2.NewLineForMembersInObjectInit = False
+		$2.NewLineForMembersInAnonymousTypes = False
+		$2.NewLineForClausesInQuery = False
+		$2.SpacingAfterMethodDeclarationName = True
+		$2.SpaceAfterMethodCallName = True
+		$2.SpaceBeforeOpenSquareBracket = True
 		$0.DotNetNamingPolicy = $3
-		$3.DirectoryNamespaceAssociation = None
-		$3.ResourceNamePolicy = FileFormatDefault
 		$0.TextStylePolicy = $4
 		$4.FileWidth = 240
 		$4.EolMarker = Unix
-		$4.inheritsSet = VisualStudio
-		$4.inheritsScope = text/plain
 		$4.scope = text/plain
+		$4.TabsToSpaces = True
 		$0.TextStylePolicy = $5
 		$5.inheritsSet = null
 		$5.scope = application/xml
 		$0.XmlFormattingPolicy = $6
-		$6.inheritsSet = Mono
-		$6.inheritsScope = application/xml
 		$6.scope = application/xml
 		$0.TextStylePolicy = $7
 		$7.inheritsSet = null
